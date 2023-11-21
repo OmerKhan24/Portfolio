@@ -1,6 +1,6 @@
 # Portfolio
 
-Description <br>
+**Description**<br>
 Welcome to my official portfolio website, designed to showcase a collection of my work and skills. I'm Muhammad Omer Khan, a computer scientist, software developer, and digital marketer. This platform serves as a window into my world, highlighting my journey, skills, and the impactful projects I've been a part of. Explore the various sections to get to know me better and witness the fusion of creativity, coding, and marketing expertise.
 
 <br>**About Me**<br>
@@ -20,5 +20,5 @@ Read what professionals have to say about working with me. Their testimonials re
 <br>
 <br>**Contact Me**<br>
 If you're interested in discussing a project, have questions, or just want to connect, feel free to reach out. You can find my contact information and social media links in the Contact Me section.
-<br>
-Thank you for visiting, and I hope you enjoy exploring my portfolio!
+
+<br>Thank you for visiting, and I hope you enjoy exploring my portfolio!
