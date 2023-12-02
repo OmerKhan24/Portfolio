@@ -899,6 +899,10 @@ form textarea {
         padding-bottom: 3rem;
     }
 
+    .home-content .btn{
+        margin-top: -10px;
+    }
+
     .home .profession-container {
         left: 0;
         width: 100%;
