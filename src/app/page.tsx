@@ -1,10 +1,23 @@
+'use client';
+
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
+import EnhancedBackground from '@/components/EnhancedBackground';
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Muhammad Omer Khan</h1>
-        <p className="text-xl">Portfolio - Loading Components...</p>
-      </div>
-    </div>
+    <main className="relative min-h-screen text-white">
+      <EnhancedBackground />
+      <Header />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
   );
 }
