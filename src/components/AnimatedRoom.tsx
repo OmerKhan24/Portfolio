@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 interface AnimatedRoomProps {
   imageSrc: string; // transparent PNG of your gamer room

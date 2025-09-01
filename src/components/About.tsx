@@ -75,7 +75,7 @@ const About = () => {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               I specialize in building AI-powered and data-driven applications—from neural networks 
               and ML tools to web interfaces and e-commerce systems. Currently pursuing my Computer 
-              Science degree at FAST University, I'm passionate about exploring the intersection of 
+              Science degree at FAST University, I&apos;m passionate about exploring the intersection of 
               artificial intelligence, data analytics, and modern web development.
             </p>
           </motion.div>

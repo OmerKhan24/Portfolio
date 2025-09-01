@@ -183,7 +183,7 @@ const Skills = () => {
           >
             <h3 className="text-2xl font-bold text-white mb-4">Always Learning</h3>
             <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              I'm constantly expanding my skill set and staying up-to-date with the latest technologies. 
+              I&apos;m constantly expanding my skill set and staying up-to-date with the latest technologies. 
               Currently focusing on advanced machine learning techniques, cloud computing, and modern 
               web development frameworks to build more sophisticated and scalable applications.
             </p>

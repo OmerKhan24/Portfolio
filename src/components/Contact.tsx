@@ -112,14 +112,14 @@ const Contact = () => {
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
+              I&apos;m always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-white mb-8">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-white mb-8">Let&apos;s Connect</h3>
               
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => (

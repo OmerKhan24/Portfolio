@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, MapPin, Code, Brain, Database, Globe, ChevronDown } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Code, Brain, Database, Globe } from 'lucide-react';
 import AnimatedRoom from './AnimatedRoom';
 
 const Hero = () => {
@@ -112,7 +112,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="mb-4"
             >
-              <span className="text-blue-400 text-lg font-mono tracking-wider">Hello, I'm</span>
+              <span className="text-blue-400 text-lg font-mono tracking-wider">Hello, I&apos;m</span>
             </motion.div>
 
             <motion.h1
@@ -252,7 +252,7 @@ const Hero = () => {
                 className="px-8 py-4 rounded-xl border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 transition-all duration-300 font-semibold glass"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Let's Connect
+                Let&apos;s Connect
               </motion.button>
             </motion.div>
           </motion.div>
