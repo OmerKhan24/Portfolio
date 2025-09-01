@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-nextjs",
+  "description": "Muhammad Omer Khan's professional portfolio website",
+  "homepage": "https://omerkhan24.github.io/Portfolio/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OmerKhan24/portfolio-nextjs.git"
+  },
+  "author": {
+    "name": "Muhammad Omer Khan",
+    "email": "omerkhan2406@gmail.com",
+    "url": "https://github.com/OmerKhan24"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "framer-motion",
+    "ai",
+    "machine-learning",
+    "full-stack",
+    "data-analytics"
+  ],
+  "scripts": {
+    "export": "next build && next export"
+  }
+}
