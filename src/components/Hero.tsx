@@ -278,7 +278,7 @@ const Hero = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-5 transform translate-x-40"
                   >
                     <div className="text-center text-white">
                       <div className="grid grid-cols-2 gap-4 lg:gap-6">
