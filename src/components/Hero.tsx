@@ -52,7 +52,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-32 md:pt-20 overflow-hidden">
       
       {/* Interactive cursor follower */}
       <motion.div
@@ -262,23 +262,23 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="flex justify-end relative"
+            className="flex justify-end relative ml-8"
           >
-            <div className="relative">
+            <div className="relative transform scale-110">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="relative group"
               >
                 {/* Gaming Setup Display */}
-                <div className="relative ">
+                <div className="relative">
                   <AnimatedRoom imageSrc="/room_image_2.png" duration={5} />
                   
                   {/* Overlay with stats */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-5 transform translate-x-40"
+                    className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
                     <div className="text-center text-white">
                       <div className="grid grid-cols-2 gap-4 lg:gap-6">
@@ -312,7 +312,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
