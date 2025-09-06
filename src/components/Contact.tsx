@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
-import { Mail, Github, Linkedin, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -20,6 +21,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -31,18 +33,50 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+      
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      
+      if (!serviceId || !templateId) {
+        throw new Error('EmailJS configuration is missing. Please check environment variables.');
+      }
+      
+      // Prepare template parameters matching your EmailJS template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        email: formData.email,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(serviceId, templateId, templateParams);
+      
+      if (response.status === 200) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        }, 5000);
+      } else {
+        throw new Error('Failed to send email');
+      }
+      
+    } catch (error: any) {
+      setIsSubmitting(false);
+      setSubmitError('Failed to send message. Please try again or contact me directly at omerkhan2406@gmail.com');
+      console.error('EmailJS Error:', error);
+    }
   };
 
   const contactInfo = [
@@ -241,6 +275,18 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Error Message */}
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center space-x-2 p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-400"
+                  >
+                    <AlertCircle size={20} />
+                    <span>{submitError}</span>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
                   disabled={isSubmitting || isSubmitted}
@@ -251,6 +297,8 @@ const Contact = () => {
                       ? 'bg-green-600 text-white cursor-default'
                       : isSubmitting
                       ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                      : submitError
+                      ? 'btn-primary text-white hover:shadow-lg'
                       : 'btn-primary text-white hover:shadow-lg'
                   }`}
                 >

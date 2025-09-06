@@ -166,6 +166,14 @@ const About = () => {
                         <div className="flex items-center space-x-2 mb-3">
                           <Building className="text-gray-400" size={16} />
                           <p className="text-gray-300 font-medium">Enfanto Pakistan – Karachi, Pakistan</p>
+                          <a 
+                            href="https://enfantopakistan.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-300 text-sm underline transition-colors"
+                          >
+                            (Website)
+                          </a>
                         </div>
                         <div className="flex items-center space-x-2">
                           <Briefcase className="text-purple-400" size={16} />
@@ -235,6 +243,25 @@ const About = () => {
                         <div className="flex items-center space-x-2 mb-3">
                           <Building className="text-gray-400" size={16} />
                           <p className="text-gray-300 font-medium">PayPro Pvt Limited</p>
+                          <div className="flex space-x-1 text-sm">
+                            <a 
+                              href="https://paypro.com.pk/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-purple-400 hover:text-purple-300 underline transition-colors"
+                            >
+                              (Website)
+                            </a>
+                            <span className="text-gray-500">|</span>
+                            <a 
+                              href="https://www.linkedin.com/company/paypropk" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-purple-400 hover:text-purple-300 underline transition-colors"
+                            >
+                              (LinkedIn)
+                            </a>
+                          </div>
                         </div>
                         <div className="flex items-center space-x-2">
                           <Briefcase className="text-pink-400" size={16} />

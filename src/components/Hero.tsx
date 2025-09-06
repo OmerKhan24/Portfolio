@@ -69,15 +69,15 @@ const Hero = () => {
         }}
       />
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center lg:text-left relative"
+            className="text-center lg:text-left relative ml-0 lg:-ml-8 order-2 lg:order-1"
           >
             
             {/* Floating background elements */}
@@ -262,9 +262,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="flex justify-end relative ml-8"
+            className="flex justify-center lg:justify-end relative -ml-80 lg:ml-8 order-1 lg:order-2"
           >
-            <div className="relative transform scale-110">
+            <div className="relative transform scale-80 sm:scale-90 lg:scale-110">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}

@@ -27,6 +27,7 @@ const Projects = () => {
       category: 'Web Apps',
       tags: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/OmerKhan24/SleepSmart',
+      liveUrl: 'https://omerkhan24.github.io/SleepSmart/',
       icon: Globe,
       gradient: 'from-blue-500 to-cyan-500',
     },
@@ -63,6 +64,7 @@ const Projects = () => {
       category: 'Web Apps',
       tags: ['HTML', 'CSS', 'UI Design'],
       github: 'https://github.com/OmerKhan24/Gemini-Clone',
+      liveUrl: 'https://gemini-clone-rouge.vercel.app/',
       icon: Globe,
       gradient: 'from-indigo-500 to-purple-500',
     },
@@ -159,9 +161,23 @@ const Projects = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300"
+                        title="View Source Code"
                       >
                         <Github size={20} className="text-white" />
                       </motion.a>
+                      {project.liveUrl && (
+                        <motion.a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300"
+                          title="View Live Demo"
+                        >
+                          <ExternalLink size={20} className="text-white" />
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -192,18 +208,33 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action Button */}
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300"
-                  >
-                    <span>View Project</span>
-                    <ExternalLink size={16} />
-                  </motion.a>
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3">
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center space-x-2 text-gray-400 hover:text-white font-medium transition-colors duration-300"
+                    >
+                      <Github size={16} />
+                      <span>View Code</span>
+                    </motion.a>
+                    {project.liveUrl && (
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Live Demo</span>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -28,7 +28,7 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed z-50 top-4 w-full md:w-auto left-0 md:left-[300px] flex justify-center md:justify-start"
+      className="fixed z-50 top-4 w-full md:w-auto left-0 md:left-[250px] flex justify-center md:justify-start"
     >
       {/* Floating Island Container */}
       <motion.nav
@@ -36,7 +36,7 @@ const Header = () => {
           scrolled 
             ? 'bg-black/20 backdrop-blur-sm border border-white/30' 
             : 'bg-white/5 backdrop-blur-sm border border-white/30'
-        } rounded-full px-6 md:px-12 py-4 md:py-5 shadow-2xl min-w-fit md:min-w-[1000px] border-transparent`}
+        } rounded-full px-6 md:px-12 py-4 md:py-5 shadow-2xl min-w-fit md:min-w-[1500px] border-transparent`}
         whileHover={{ 
           boxShadow: "0 20px 40px rgba(255,255,255,0.1)",
           scale: 1.02
