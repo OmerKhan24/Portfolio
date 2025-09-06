@@ -2,14 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Code, 
-  Database, 
   Brain, 
   BarChart3,
   Monitor,
-  Server,
-  Cpu,
-  TrendingUp
+  Server
 } from 'lucide-react';
 
 const Skills = () => {

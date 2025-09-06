@@ -33,7 +33,7 @@ const Hero = () => {
     }, 80);
     
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [currentIndex, titles.length]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

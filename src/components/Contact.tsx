@@ -72,7 +72,7 @@ const Contact = () => {
         throw new Error('Failed to send email');
       }
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       setIsSubmitting(false);
       setSubmitError('Failed to send message. Please try again or contact me directly at omerkhan2406@gmail.com');
       console.error('EmailJS Error:', error);
@@ -156,7 +156,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-white mb-8">Let&apos;s Connect</h3>
               
               <div className="space-y-6 mb-8">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info) => (
                   <motion.a
                     key={info.label}
                     href={info.href}

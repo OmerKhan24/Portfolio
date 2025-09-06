@@ -83,7 +83,7 @@ const About = () => {
             variants={itemVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
           >
-            {highlights.map((highlight, index) => (
+            {highlights.map((highlight) => (
               <motion.div
                 key={highlight.title}
                 variants={itemVariants}
