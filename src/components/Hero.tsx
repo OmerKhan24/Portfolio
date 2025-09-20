@@ -5,16 +5,16 @@ import { useEffect, useState } from 'react';
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Code, Brain, Database, Globe, Download } from 'lucide-react';
 import AnimatedRoom from './AnimatedRoom';
 
+const titles = [
+  'Computer Science Undergraduate passionate about AI, Data Analytics, and Full-Stack Development',
+  'Building intelligent systems and data-driven applications',
+  'Exploring NLP, BI tools, and cutting-edge technologies'
+];
+
 const Hero = () => {
   const [text, setText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  
-  const titles = [
-    'Computer Science Undergraduate passionate about AI, Data Analytics, and Full-Stack Development',
-    'Building intelligent systems and data-driven applications',
-    'Exploring NLP, BI tools, and cutting-edge technologies'
-  ];
 
   useEffect(() => {
     const currentTitle = titles[currentIndex];
