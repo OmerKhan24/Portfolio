@@ -141,13 +141,23 @@ const Contact = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Get In <span className="gradient-text">Touch</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I&apos;m always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
-            </p>
+          <motion.div variants={itemVariants} className="text-center mb-16 relative">
+            {/* Background Text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+                CONTACT
+              </span>
+            </div>
+            
+            {/* Main Content */}
+            <div className="relative z-10">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                Get In <span className="gradient-text">Touch</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                I&apos;m always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
+              </p>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -323,15 +333,7 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Footer */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-20 pt-8 border-t border-gray-700/50 text-center"
-          >
-            <p className="text-gray-400">
-              © 2025 Muhammad Omer Khan. Built with Next.js and lots of ☕
-            </p>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

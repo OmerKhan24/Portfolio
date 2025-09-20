@@ -68,14 +68,24 @@ const About = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              About <span className="gradient-text">Me</span>
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
-              I specialize in building AI-powered and data-driven applications. Currently pursuing Computer 
-              Science at FAST University, I&apos;m passionate about AI, data analytics, and modern web development.
-            </p>
+          <motion.div variants={itemVariants} className="text-center mb-16 relative">
+            {/* Background Text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+                ABOUT
+              </span>
+            </div>
+            
+            {/* Main Content */}
+            <div className="relative z-10">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                About <span className="gradient-text">Me</span>
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
+                I specialize in building AI-powered and data-driven applications. Currently pursuing Computer 
+                Science at FAST University, I&apos;m passionate about AI, data analytics, and modern web development.
+              </p>
+            </div>
           </motion.div>
 
           {/* Highlights Grid */}

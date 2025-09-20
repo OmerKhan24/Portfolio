@@ -32,6 +32,15 @@ const Projects = () => {
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
+      title: 'Car Showroom Management System',
+      description: 'A comprehensive web-based car showroom management system with vehicle listings, test drive scheduling, user inquiries, and financial management features.',
+      category: 'Web Apps',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Python Flask', 'MySQL'],
+      github: 'https://github.com/OmerKhan24/car_showroom',
+      icon: Globe,
+      gradient: 'from-red-500 to-orange-500',
+    },
+    {
       title: 'Emotion Recognizer',
       description: 'CNN-based emotion detection system using facial images, leveraging deep learning for accurate emotion classification.',
       category: 'AI / ML Projects',
@@ -108,13 +117,21 @@ const Projects = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              My <span className="gradient-text">Projects</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A showcase of my technical projects spanning AI/ML, web development, and system programming
-            </p>
+          <motion.div variants={itemVariants} className="text-center mb-16 relative">
+            {/* Background Text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-[8rem] lg:text-[12rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+                PROJECTS
+              </span>
+            </div>            {/* Main Content */}
+            <div className="relative z-10">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                My <span className="gradient-text">Projects</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                A showcase of my technical projects spanning AI/ML, web development, and system programming
+              </p>
+            </div>
           </motion.div>
 
           {/* Category Filter */}

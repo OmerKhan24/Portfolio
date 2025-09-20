@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, MapPin, Code, Brain, Database, Globe } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Code, Brain, Database, Globe, Download } from 'lucide-react';
 import AnimatedRoom from './AnimatedRoom';
 
 const Hero = () => {
@@ -52,7 +52,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-32 md:pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-40 md:pt-32 overflow-hidden">
       
       {/* Interactive cursor follower */}
       <motion.div
@@ -93,18 +93,6 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
             />
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-blue-400/20 mb-4">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse" />
-                <span className="text-blue-300 text-sm font-medium">Available for opportunities</span>
-              </div>
-            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -227,6 +215,53 @@ const Hero = () => {
                   />
                 </motion.a>
               ))}
+            </motion.div>
+
+            {/* Download Resume CTA - Prominent Position */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.8 }}
+              className="flex justify-center lg:justify-start mb-6"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative overflow-hidden px-10 py-5 rounded-2xl bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20 border border-purple-500/50 text-purple-300 hover:text-white transition-all duration-500 font-semibold glass group"
+                onClick={() => document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_100%] animate-pulse"></div>
+                
+                {/* Floating particles effect */}
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-2 left-4 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
+                  <div className="absolute bottom-2 right-6 w-1 h-1 bg-pink-400 rounded-full animate-ping animation-delay-300"></div>
+                  <div className="absolute top-3 right-4 w-0.5 h-0.5 bg-purple-300 rounded-full animate-pulse animation-delay-700"></div>
+                </div>
+                
+                {/* Button content */}
+                <div className="relative z-10 flex items-center gap-2">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="transition-transform duration-300"
+                  >
+                    <Download size={20} />
+                  </motion.div>
+                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-300 text-lg">
+                    Download Resume
+                  </span>
+                  
+                  {/* Sparkle effect */}
+                  <motion.div
+                    className="absolute -top-1 -right-1 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    ✨
+                  </motion.div>
+                </div>
+              </motion.button>
             </motion.div>
 
             {/* Action Buttons */}
