@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Play, Code, Terminal, Zap, Copy, Check, Calculator, Hash, FileText } from 'lucide-react';
 
 const CodePlayground = () => {
@@ -196,7 +196,7 @@ console.log(calc.calculate('2 + 2 * 3')); // { success: true, result: 8 }`,
                     const result = Function(`"use strict"; return (${sanitized})`)();
                     setCalcResult(`${calcInput} = ${result}`);
                   }
-                } catch (error) {
+                } catch {
                   setCalcResult('Error: Invalid expression');
                 }
               }}

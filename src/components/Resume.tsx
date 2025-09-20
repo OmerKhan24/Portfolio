@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Download, Eye, Calendar, MapPin, Mail, Phone, Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Download, Eye, Calendar, MapPin, Briefcase, GraduationCap, Award } from 'lucide-react';
 
 const Resume = () => {
   const [ref, inView] = useInView({

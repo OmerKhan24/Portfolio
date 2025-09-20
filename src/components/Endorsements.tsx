@@ -111,7 +111,7 @@ const Endorsements = () => {
 
                   {/* Endorsement Text */}
                   <blockquote className="text-gray-300 mb-6 leading-relaxed">
-                    "{endorsement.text}"
+                    &ldquo;{endorsement.text}&rdquo;
                   </blockquote>
 
                   {/* Author Info */}

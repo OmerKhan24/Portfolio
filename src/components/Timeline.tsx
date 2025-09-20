@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, MapPin, Award, Code2, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { Code2, Briefcase, GraduationCap, Star } from 'lucide-react';
 
 const Timeline = () => {
   const [ref, inView] = useInView({

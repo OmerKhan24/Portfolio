@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Database, Cloud, Zap, Globe, Lock, BarChart3, Copy, Check } from 'lucide-react';
+import { Cloud, Zap, Globe, Lock, BarChart3, Copy, Check } from 'lucide-react';
 
 const APIShowcase = () => {
   const [ref, inView] = useInView({

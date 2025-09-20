@@ -188,8 +188,6 @@ const SystemArchitecture = () => {
                 {/* SVG for connections */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none">
                   {architectures[selectedSystem].connections.map((conn, index) => {
-                    const fromComp = architectures[selectedSystem].components[conn.from];
-                    const toComp = architectures[selectedSystem].components[conn.to];
                     return (
                       <motion.line
                         key={index}

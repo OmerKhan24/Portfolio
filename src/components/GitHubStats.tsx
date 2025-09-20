@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Star, GitFork, Calendar, Code, TrendingUp, Zap, Target } from 'lucide-react';
+import { Github, Star, Code, TrendingUp, Zap, Target } from 'lucide-react';
 
 const GitHubStats = () => {
   const [ref, inView] = useInView({
