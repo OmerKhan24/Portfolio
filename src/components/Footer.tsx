@@ -14,13 +14,13 @@ const Footer = () => {
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/muhammad-omer-khan',
+      url: 'https://www.linkedin.com/in/omer-khan24/',
       icon: Linkedin,
       color: 'hover:text-blue-400'
     },
     {
       name: 'Email',
-      url: 'mailto:omerkhan@example.com',
+      url: 'mailto:omerkhan2406@gmail.com',
       icon: Mail,
       color: 'hover:text-green-400'
     }
