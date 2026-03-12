@@ -5,10 +5,7 @@
       <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
   </defs>
-  <!-- Dark background matching portfolio slate-900 -->
-  <rect width="32" height="32" rx="7" fill="#0f172a"/>
-  <!-- Subtle gradient overlay -->
-  <rect width="32" height="32" rx="7" fill="url(#g)" opacity="0.12"/>
+
   <!-- < bracket -->
   <polyline points="9,7 4,16 9,25" stroke="url(#g)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- / slash -->
