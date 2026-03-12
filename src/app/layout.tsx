@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     description: "Computer Science Undergraduate passionate about AI, Data Analytics, and Full-Stack Development",
     creator: "@MOmerKhan24",
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
