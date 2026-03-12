@@ -74,7 +74,7 @@ const Contact = () => {
       
     } catch (error: unknown) {
       setIsSubmitting(false);
-      setSubmitError('Failed to send message. Please try again or contact me directly at omerkhan2406@gmail.com');
+      setSubmitError('Failed to send message. Please email me directly at omerkhan2406@gmail.com');
       console.error('EmailJS Error:', error);
     }
   };
@@ -290,10 +290,18 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center space-x-2 p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-400"
+                    className="p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
                   >
-                    <AlertCircle size={20} />
-                    <span>{submitError}</span>
+                    <div className="flex items-center space-x-2 text-red-400 mb-3">
+                      <AlertCircle size={20} />
+                      <span className="text-sm">Couldn&apos;t send via form right now.</span>
+                    </div>
+                    <a
+                      href="mailto:omerkhan2406@gmail.com"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold rounded-lg transition-colors duration-200"
+                    >
+                      Email me directly →
+                    </a>
                   </motion.div>
                 )}
 

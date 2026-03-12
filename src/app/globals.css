@@ -279,6 +279,7 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
   border-radius: inherit;
+  pointer-events: none;
 }
 
 .card-hover:hover::before {

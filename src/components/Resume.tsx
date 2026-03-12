@@ -234,6 +234,17 @@ const Resume = () => {
                         </li>
                       ))}
                     </ul>
+                    {edu.institution.includes('FAST') && (
+                      <motion.button
+                        onClick={() => document.getElementById('fyp')?.scrollIntoView({ behavior: 'smooth' })}
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-md hover:shadow-violet-500/30"
+                      >
+                        <span>🎓</span>
+                        See my Final Year Project — IntelliHire
+                      </motion.button>
+                    )}
                   </motion.div>
                 ))}
               </div>

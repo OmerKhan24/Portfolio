@@ -6,6 +6,7 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Resume from '@/components/Resume';
+import FYPShowcase from '@/components/FYPShowcase';
 import GitHubStats from '@/components/GitHubStats';
 import CodePlayground from '@/components/CodePlayground';
 import Endorsements from '@/components/Endorsements';
@@ -22,6 +23,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <FYPShowcase />
       <Skills />
       <Projects />
       <Resume />
