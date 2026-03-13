@@ -65,16 +65,16 @@ const Endorsements = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16 relative">
             {/* Background Text */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-[8rem] lg:text-[12rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+            <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+              <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
                 TESTIMONIALS
               </span>
             </div>
             
             {/* Main Content */}
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Professional <span className="gradient-text">Endorsements</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                Professional <span className="gradient-text section-title-accent">Endorsements</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 What colleagues and collaborators say about working with me
@@ -93,35 +93,38 @@ const Endorsements = () => {
                 variants={itemVariants}
                 className="relative group"
               >
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full 
-                               hover:bg-gray-800/70 hover:border-purple-500/30 transition-all duration-300
-                               hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2">
+                <div className="relative bg-gray-800/40 backdrop-blur-sm border border-gray-700/40 rounded-2xl p-6 h-full 
+                               hover:bg-gray-800/60 hover:border-purple-500/40 transition-all duration-300
+                               hover:shadow-2xl hover:shadow-purple-500/8 hover:-translate-y-2 overflow-hidden">
+                  
+                  {/* Subtle top gradient accent */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
                   
                   {/* Quote Icon */}
                   <div className="flex justify-between items-start mb-4">
-                    <Quote className="w-8 h-8 text-purple-400/60" />
+                    <Quote className="w-7 h-7 text-purple-400/50" />
                     
                     {/* Rating Stars */}
                     <div className="flex space-x-1">
                       {[...Array(endorsement.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-current" />
                       ))}
                     </div>
                   </div>
 
                   {/* Endorsement Text */}
-                  <blockquote className="text-gray-300 mb-6 leading-relaxed">
+                  <blockquote className="text-gray-300 text-sm mb-6 leading-relaxed">
                     &ldquo;{endorsement.text}&rdquo;
                   </blockquote>
 
                   {/* Author Info */}
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
-                      <h4 className="font-semibold text-white mb-1">{endorsement.name}</h4>
-                      <p className="text-sm text-gray-400 mb-1">{endorsement.position}</p>
-                      <p className="text-sm text-purple-400 mb-2">{endorsement.company}</p>
+                      <h4 className="font-semibold text-white mb-0.5">{endorsement.name}</h4>
+                      <p className="text-xs text-gray-400 mb-0.5">{endorsement.position}</p>
+                      <p className="text-xs text-purple-400 mb-1.5">{endorsement.company}</p>
                       {endorsement.date && (
-                        <p className="text-xs text-gray-500">{endorsement.date}</p>
+                        <p className="text-[11px] text-gray-500">{endorsement.date}</p>
                       )}
                     </div>
                     
@@ -130,15 +133,11 @@ const Endorsements = () => {
                       href={endorsement.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 transition-colors ml-4"
+                      className="text-blue-400 hover:text-blue-300 transition-colors ml-4 p-2 rounded-lg hover:bg-blue-400/10"
                     >
                       <Linkedin className="w-5 h-5" />
                     </a>
                   </div>
-
-                  {/* Hover Gradient Border */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 
-                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </div>
               </motion.div>
             ))}

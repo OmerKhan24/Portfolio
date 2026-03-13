@@ -94,16 +94,16 @@ const Skills = () => {
           className="text-center mb-12 relative"
         >
           {/* Background Text */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+          <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+            <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
               SKILLS
             </span>
           </div>
           
           {/* Main Content */}
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent section-title-accent">
                 Technical Skills
               </span>
             </h2>
@@ -128,20 +128,20 @@ const Skills = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="group"
             >
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 
-                            hover:bg-gray-800/70 hover:border-gray-600/50 transition-all duration-300 
-                            hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
+              <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/40 rounded-xl p-4 
+                            hover:bg-gray-800/60 hover:border-gray-600/50 transition-all duration-300 
+                            hover:-translate-y-1 hover:shadow-lg group">
                 <div className="flex items-center space-x-3 mb-3">
-                  <span className="text-2xl">{skill.icon}</span>
+                  <span className="text-xl">{skill.icon}</span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-white text-sm truncate">{skill.name}</h3>
-                    <span className={`text-xs px-2 py-1 rounded border ${getCategoryColor(skill.category)}`}>
+                    <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${getCategoryColor(skill.category)}`}>
                       {skill.category}
                     </span>
                   </div>
                 </div>
-                <div className="flex justify-center">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(skill.level)}`}>
+                <div className="flex justify-start">
+                  <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${getLevelColor(skill.level)}`}>
                     {skill.level}
                   </span>
                 </div>
@@ -174,24 +174,19 @@ const Skills = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
         >
-          <div className="bg-gray-800/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-blue-400 mb-1">4+</div>
-            <div className="text-gray-400 text-sm">Years Experience</div>
-          </div>
-          <div className="bg-gray-800/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-purple-400 mb-1">{topSkills.length + additionalSkills.length}</div>
-            <div className="text-gray-400 text-sm">Technologies</div>
-          </div>
-          <div className="bg-gray-800/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-green-400 mb-1">10+</div>
-            <div className="text-gray-400 text-sm">Projects</div>
-          </div>
-          <div className="bg-gray-800/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-orange-400 mb-1">6</div>
-            <div className="text-gray-400 text-sm">Categories</div>
-          </div>
+          {[
+            { value: '4+', label: 'Years Experience', color: 'text-blue-400', border: 'border-blue-400/20' },
+            { value: String(topSkills.length + additionalSkills.length), label: 'Technologies', color: 'text-purple-400', border: 'border-purple-400/20' },
+            { value: '10+', label: 'Projects', color: 'text-green-400', border: 'border-green-400/20' },
+            { value: '6', label: 'Categories', color: 'text-orange-400', border: 'border-orange-400/20' },
+          ].map((stat) => (
+            <div key={stat.label} className={`bg-gray-800/30 rounded-xl p-5 border ${stat.border} hover:bg-gray-800/50 transition-all duration-300`}>
+              <div className={`text-3xl font-bold mb-1.5 ${stat.color}`}>{stat.value}</div>
+              <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

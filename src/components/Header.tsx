@@ -31,7 +31,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed z-50 top-8 left-80 transform -translate-x-1/2 hidden md:block"
+        className="fixed z-50 top-8 left-80 transform -translate-x-1/2 hidden md:block w-[calc(100vw-4rem)] max-w-7xl px-0"
       >
       {/* 3D Layered Design with Better Positioning */}
       <div className="relative">
@@ -49,13 +49,10 @@ const Header = () => {
         <motion.nav
           className={`relative transition-all duration-700 ${
             scrolled 
-              ? 'backdrop-blur-xl border border-white/20' 
-              : 'backdrop-blur-xl border border-white/10'
-          } rounded-full px-10 py-5 flex items-center justify-between`}
+              ? 'backdrop-blur-xl border border-white/20 bg-black/20' 
+              : 'backdrop-blur-xl border border-white/10 bg-black/10'
+          } rounded-full px-8 py-4 flex items-center justify-between w-full`}
           style={{
-            width: 'fit-content',
-            minWidth: '1300px',
-            background: 'rgba(0, 0, 0, 0.1)',
             boxShadow: '0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
           }}
           whileHover={{ 
@@ -97,8 +94,8 @@ const Header = () => {
               </motion.div>
             </motion.div>
 
-            {/* Subtle Navigation Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Navigation Menu */}
+            <div className="hidden md:flex items-center space-x-1">
               {menuItems.map((item, index) => (
                 <motion.a
                   key={item.label}
@@ -107,20 +104,34 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                   whileHover={{ y: -1 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="relative group px-3 py-2 text-base font-medium transition-all duration-300"
+                  whileTap={{ scale: 0.97 }}
+                  className="relative group px-4 py-2 text-sm font-medium rounded-full overflow-hidden"
                 >
-                  {/* Enhanced Text */}
-                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  {/* Pill background on hover */}
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-250" />
+                  
+                  {/* Text */}
+                  <span className="relative z-10 text-gray-400 group-hover:text-white transition-colors hover:font-bold duration-200 tracking-wide">
                     {item.label}
                   </span>
-                  
-                  {/* Smooth Underline Animation */}
-                  <motion.span 
-                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-500 ease-out rounded-full"
-                  />
+
+                  {/* Bottom gradient line */}
+                  {/* <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] w-0 group-hover:w-3/5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 transition-all duration-300 ease-out" /> */}
                 </motion.a>
               ))}
+
+              {/* Hire Me CTA */}
+              <motion.a
+                href="#contact"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9 }}
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                className="ml-4 px-5 py-2 nav-cta text-sm rounded-full"
+              >
+                Hire Me
+              </motion.a>
             </div>
           </div>
         </motion.nav>

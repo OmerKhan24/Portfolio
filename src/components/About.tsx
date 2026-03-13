@@ -37,24 +37,32 @@ const About = () => {
       title: 'Computer Science Student',
       description: 'FAST University undergraduate with focus on AI and software development',
       color: 'text-blue-400',
+      border: 'border-l-blue-400/60',
+      glow: 'hover:shadow-blue-500/10',
     },
     {
       icon: Brain,
       title: 'AI & Machine Learning',
       description: 'Passionate about neural networks, NLP, and intelligent systems',
       color: 'text-purple-400',
+      border: 'border-l-purple-400/60',
+      glow: 'hover:shadow-purple-500/10',
     },
     {
       icon: Code,
       title: 'Full-Stack Development',
       description: 'Building end-to-end solutions with modern web technologies',
       color: 'text-cyan-400',
+      border: 'border-l-cyan-400/60',
+      glow: 'hover:shadow-cyan-500/10',
     },
     {
       icon: BarChart3,
       title: 'Data Analytics & BI',
       description: 'Transforming data into actionable insights with advanced analytics',
       color: 'text-green-400',
+      border: 'border-l-green-400/60',
+      glow: 'hover:shadow-green-500/10',
     },
   ];
 
@@ -70,16 +78,16 @@ const About = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16 relative">
             {/* Background Text */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+            <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+              <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
                 ABOUT
               </span>
             </div>
             
             {/* Main Content */}
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                About <span className="gradient-text">Me</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                About <span className="gradient-text section-title-accent">Me</span>
               </h2>
               <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
                 I specialize in building AI-powered and data-driven applications. Currently pursuing Computer 
@@ -91,24 +99,24 @@ const About = () => {
           {/* Highlights Grid */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
           >
             {highlights.map((highlight) => (
               <motion.div
                 key={highlight.title}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="card-hover bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+                whileHover={{ y: -6 }}
+                className={`group bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 border border-gray-700/40 border-l-2 ${highlight.border} hover:bg-gray-800/60 hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl ${highlight.glow}`}
               >
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 rounded-lg bg-gray-700/50 ${highlight.color}`}>
-                    <highlight.icon size={24} />
+                  <div className={`p-2.5 rounded-lg bg-gray-700/40 ${highlight.color} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                    <highlight.icon size={22} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-white mb-1.5 group-hover:text-white transition-colors">
                       {highlight.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {highlight.description}
                     </p>
                   </div>
@@ -141,7 +149,10 @@ const About = () => {
                       whileTap={{ scale: 0.96 }}
                       className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-md hover:shadow-violet-500/30"
                     >
-                      <span>🎓</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0">
+                        <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+                        <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+                      </svg>
                       See my Final Year Project — IntelliHire
                     </motion.button>
                   </div>

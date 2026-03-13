@@ -157,14 +157,14 @@ const Projects = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16 relative">
             {/* Background Text */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-[8rem] lg:text-[12rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+            <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+              <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
                 PROJECTS
               </span>
             </div>            {/* Main Content */}
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                My <span className="gradient-text">Projects</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                My <span className="gradient-text section-title-accent">Projects</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 A showcase of my technical projects spanning AI/ML, web development, and system programming
@@ -226,11 +226,11 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -10, zIndex: 10 }}
-                className={`relative card-hover bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border group transition-all duration-300 ${
+                whileHover={{ y: -8, zIndex: 10 }}
+                className={`relative bg-gray-800/45 backdrop-blur-sm rounded-xl overflow-hidden border group transition-all duration-300 hover:shadow-xl ${
                   project.highlight
-                    ? 'border-yellow-500/40 shadow-lg shadow-yellow-500/10'
-                    : 'border-gray-700/50'
+                    ? 'border-yellow-500/30 hover:border-yellow-500/50 hover:shadow-yellow-500/5'
+                    : 'border-gray-700/40 hover:border-gray-600/60 hover:shadow-blue-500/5'
                 }`}
               >
                 {/* Featured ribbon — removed absolute variant */}
@@ -303,11 +303,11 @@ const Projects = () => {
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full"
+                        className="px-2.5 py-0.5 bg-gray-700/40 border border-gray-600/30 text-gray-300 text-[11px] font-medium rounded-full hover:bg-gray-700/70 transition-colors duration-200"
                       >
                         {tag}
                       </span>

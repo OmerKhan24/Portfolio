@@ -56,18 +56,20 @@ const Hero = () => {
       
       {/* Interactive cursor follower */}
       <motion.div
-        className="fixed w-6 h-6 border border-blue-400/30 rounded-full pointer-events-none z-10 mix-blend-difference"
+        className="fixed w-8 h-8 border border-blue-400/50 rounded-full pointer-events-none z-10"
         animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
         }}
         transition={{
           type: "spring",
-          stiffness: 150,
-          damping: 15,
+          stiffness: 200,
+          damping: 20,
           mass: 0.1,
         }}
-      />
+      >
+        <div className="absolute inset-[5px] bg-blue-400/20 rounded-full" />
+      </motion.div>
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -100,7 +102,11 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="mb-4"
             >
-              <span className="text-blue-400 text-lg font-mono tracking-wider">Hello, I&apos;m</span>
+              <span className="inline-flex items-center gap-2 text-blue-400 text-sm font-mono tracking-[0.2em] uppercase">
+                <span className="w-8 h-px bg-blue-400/70" />
+                Hello, I&apos;m
+                <span className="w-8 h-px bg-blue-400/70" />
+              </span>
             </motion.div>
 
             <motion.h1
@@ -112,15 +118,13 @@ const Hero = () => {
               <motion.span 
                 className="gradient-text block"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.2 }}              >
                 Muhammad
               </motion.span>
               <motion.span 
                 className="text-white block"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.2 }}              >
                 Omer Khan
               </motion.span>
             </motion.h1>
@@ -148,7 +152,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="flex justify-center lg:justify-start gap-4 mb-8"
+              className="flex justify-center lg:justify-start gap-3 mb-8"
             >
               {skillIcons.map((skill, index) => (
                 <motion.div
@@ -156,11 +160,11 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.2 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex flex-col items-center p-3 glass rounded-xl border border-gray-700/50 group cursor-pointer"
+                  whileHover={{ scale: 1.08, y: -4 }}
+                  className="flex flex-col items-center gap-1.5 px-4 py-3 rounded-xl bg-gray-800/40 border border-gray-700/40 hover:border-gray-500/60 hover:bg-gray-800/60 group cursor-pointer transition-all duration-300"
                 >
-                  <skill.icon className={`${skill.color} mb-2 group-hover:scale-110 transition-transform`} size={24} />
-                  <span className="text-xs text-gray-400 group-hover:text-white transition-colors">{skill.label}</span>
+                  <skill.icon className={`${skill.color} group-hover:scale-110 transition-transform duration-200`} size={20} />
+                  <span className="text-[11px] font-medium text-gray-400 group-hover:text-gray-200 transition-colors whitespace-nowrap">{skill.label}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -217,7 +221,7 @@ const Hero = () => {
               ))}
             </motion.div>
 
-            {/* Download Resume CTA - Prominent Position */}
+            {/* Download Resume CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -225,42 +229,14 @@ const Hero = () => {
               className="flex justify-center lg:justify-start mb-6"
             >
               <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative overflow-hidden px-10 py-5 rounded-2xl bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20 border border-purple-500/50 text-purple-300 hover:text-white transition-all duration-500 font-semibold glass group"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                className="relative overflow-hidden flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600/15 to-indigo-600/15 border border-purple-500/40 text-purple-300 hover:text-white hover:border-purple-400/70 transition-all duration-300 font-semibold group"
                 onClick={() => document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_100%] animate-pulse"></div>
-                
-                {/* Floating particles effect */}
-                <div className="absolute inset-0 opacity-30">
-                  <div className="absolute top-2 left-4 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
-                  <div className="absolute bottom-2 right-6 w-1 h-1 bg-pink-400 rounded-full animate-ping animation-delay-300"></div>
-                  <div className="absolute top-3 right-4 w-0.5 h-0.5 bg-purple-300 rounded-full animate-pulse animation-delay-700"></div>
-                </div>
-                
-                {/* Button content */}
-                <div className="relative z-10 flex items-center gap-2">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="transition-transform duration-300"
-                  >
-                    <Download size={20} />
-                  </motion.div>
-                  <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-300 text-lg">
-                    Download Resume
-                  </span>
-                  
-                  {/* Sparkle effect */}
-                  <motion.div
-                    className="absolute -top-1 -right-1 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    ✨
-                  </motion.div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <Download size={18} className="relative z-10" />
+                <span className="relative z-10 text-base">Download Resume</span>
               </motion.button>
             </motion.div>
 

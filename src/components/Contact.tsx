@@ -143,16 +143,16 @@ const Contact = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16 relative">
             {/* Background Text */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+            <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+              <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
                 CONTACT
               </span>
             </div>
             
             {/* Main Content */}
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Get In <span className="gradient-text">Touch</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                Get In <span className="gradient-text section-title-accent">Touch</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 I&apos;m always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
@@ -221,7 +221,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-300 text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block text-gray-400 text-[11px] font-semibold uppercase tracking-widest mb-2">
                       Name
                     </label>
                     <input
@@ -231,13 +231,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300"
+                      className="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-500"
                       placeholder="Your name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-gray-300 text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block text-gray-400 text-[11px] font-semibold uppercase tracking-widest mb-2">
                       Email
                     </label>
                     <input
@@ -247,14 +247,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300"
+                      className="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-500"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-gray-300 text-sm font-medium mb-2">
+                  <label htmlFor="subject" className="block text-gray-400 text-[11px] font-semibold uppercase tracking-widest mb-2">
                     Subject
                   </label>
                   <input
@@ -264,13 +264,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300"
-                    placeholder="What's this about?"
+                    className="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-500"
+                    placeholder="What&apos;s this about?"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-gray-300 text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-gray-400 text-[11px] font-semibold uppercase tracking-widest mb-2">
                     Message
                   </label>
                   <textarea
@@ -280,7 +280,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-500 resize-none"
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>

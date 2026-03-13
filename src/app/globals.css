@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -264,7 +265,7 @@ body {
 
 /* Professional card hover effects */
 .card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -275,9 +276,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.07), rgba(139, 92, 246, 0.07));
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
   border-radius: inherit;
   pointer-events: none;
 }
@@ -287,8 +288,73 @@ body {
 }
 
 .card-hover:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(59, 130, 246, 0.12);
+}
+
+/* Premium card with gradient top border */
+.premium-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.6) 30%, rgba(139, 92, 246, 0.8) 50%, rgba(59, 130, 246, 0.6) 70%, transparent 100%);
+}
+
+/* Gradient vertical left-border for feature cards */
+.accent-card-blue {
+  border-left: 2px solid transparent;
+  background-image: linear-gradient(rgba(15, 23, 42, 0), rgba(15, 23, 42, 0)), linear-gradient(135deg, #3b82f6, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Section horizontal divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3) 20%, rgba(139, 92, 246, 0.4) 50%, rgba(59, 130, 246, 0.3) 80%, transparent);
+  margin: 2rem 0;
+}
+
+/* Improved form input style */
+.form-input {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  border-radius: 0.5rem;
+  color: white;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.7);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.08);
+  background: rgba(17, 24, 39, 0.9);
+}
+
+/* Hire Me / CTA nav button */
+.nav-cta {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 9999px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+
+.nav-cta:hover {
+  background: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
 }
 
 /* Enhanced button styles */
@@ -424,7 +490,50 @@ body {
   animation-delay: 0.7s;
 }
 
-/* Smooth transitions for all elements */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+/* Scoped smooth transitions — links, buttons, inputs only */
+a, button, input, textarea, select {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+/* Section title accent underline */
+.section-title-accent {
+  display: inline-block;
+}
+
+.section-title-accent::after {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  border-radius: 9999px;
+  margin: 10px auto 0;
+}
+
+/* Shine sweep for premium cards */
+@keyframes shine-sweep {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+.shine-on-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-on-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  transform: skewX(-15deg);
+  transition: none;
+}
+
+.shine-on-hover:hover::after {
+  animation: shine-sweep 0.6s ease forwards;
 }

@@ -83,8 +83,8 @@ const APIShowcase = () => {
           className="text-center mb-12 relative"
         >
           {/* Background Text */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="text-[8rem] lg:text-[12rem] font-black bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+          <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+            <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
               APIS
             </span>
           </div>

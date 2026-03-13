@@ -34,7 +34,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gray-900/95 backdrop-blur-sm border-t border-gray-800">
+    <footer className="relative bg-gray-900/95 backdrop-blur-sm">
+      {/* Gradient top border */}
+      <div className="h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/10 to-purple-900/10" />
       

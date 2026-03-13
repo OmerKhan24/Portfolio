@@ -202,8 +202,8 @@ const FYPShowcase = () => {
             variants={itemVariants}
             className="text-center mb-16 relative"
           >
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-[6rem] lg:text-[10rem] font-black bg-gradient-to-r from-violet-500/10 via-indigo-500/10 to-purple-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
+            <div className="absolute inset-0 flex items-start justify-center pointer-events-none overflow-hidden">
+              <span className="text-[5.5rem] lg:text-[7rem] font-black bg-gradient-to-r from-violet-500/10 via-indigo-500/10 to-purple-500/10 bg-clip-text text-transparent select-none whitespace-nowrap">
                 FYP
               </span>
             </div>
